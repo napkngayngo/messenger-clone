@@ -77,7 +77,13 @@ const AuthForm = () => {
       >
         <form className="space-y-6" onSubmit={handleSubmit(onSubmit)}>
           {variant === "REGISTER" && (
-            <Input id="name" label="Name" register={register} errors={errors} />
+            <Input
+              id="name"
+              label="Name"
+              register={register}
+              errors={errors}
+              disabled={isLoading}
+            />
           )}
           <Input
             id="email"
@@ -141,7 +147,8 @@ const AuthForm = () => {
             />
           </div>
         </div>
-        <div className="
+        <div
+          className="
           flex
           gap-2
           justify-center
@@ -149,15 +156,15 @@ const AuthForm = () => {
           mt-6
           px-2
           text-gray-500
-        ">
+        "
+        >
           <div>
-            {variant === 'LOGIN' ? 'New to Messenger?' : 'Already have an account?'}
+            {variant === "LOGIN"
+              ? "New to Messenger?"
+              : "Already have an account?"}
           </div>
-          <div
-            onClick={toggleVariant}
-            className="underline cursor-pointer"
-          >
-            {variant === 'LOGIN' ? 'Create an account' : 'Login '}
+          <div onClick={toggleVariant} className="underline cursor-pointer">
+            {variant === "LOGIN" ? "Create an account" : "Login "}
           </div>
         </div>
       </div>
